@@ -56,7 +56,17 @@ function _auto_notify_message() {
             urgency="critical"
             transient=""
         fi
+
+        if [[ -n "$AUTO_NOTIFY_EXEC_PRE_NOTIFY" ]]; then
+            echo `$AUTO_NOTIFY_EXEC_PRE_NOTIFY`
+        fi
         notify-send "$title" "$body" --app-name=zsh $transient "--urgency=$urgency" "--expire-time=$AUTO_NOTIFY_EXPIRE_TIME"
+        
+
+
+        if [[ -n "$AUTO_NOTIFY_EXEC_PAST_NOTIFY" ]]; then
+        echo `$AUTO_NOTIFY_EXEC_PAST_NOTIFY`
+    fi
     elif [[ "$platform" == "Darwin" ]]; then
         osascript \
           -e 'on run argv' \
