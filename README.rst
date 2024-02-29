@@ -1,3 +1,7 @@
+*TODO*
+TEST AUTO_NOTIFY_EXEC_PRE_NOTIFY & AUTO_NOTIFY_EXEC_POST_NOTIFY
+
+
 ZSH Auto-Notify
 ===============
 
